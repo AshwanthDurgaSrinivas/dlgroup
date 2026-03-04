@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | DL Group & Finance</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --navy: #0a192f;
+            --navy-light: #112240;
+            --text-light: #ccd6f6;
+            --text-muted: #8892b0;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: var(--surface);
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .contact-header {
+            padding: 180px 6% 120px;
+            background: radial-gradient(circle at 0% 100%, var(--navy-light) 0%, var(--navy) 60%, rgba(10, 25, 47, 0.95) 100%);
+            text-align: center;
+        }
+
+        .page-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: #fff;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, #fff, var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .contact-wrapper {
+            width: 100%;
+            max-width: 1300px;
+            margin: -60px auto 100px;
+            padding: 0 6%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            position: relative;
+            z-index: 5;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 968px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                margin-top: 20px;
+            }
+        }
+
+        .contact-info-panel {
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .info-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(10, 25, 47, 0.04);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .info-block:hover .info-icon {
+            background: var(--navy);
+            color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        .info-text h3 {
+            font-family: 'Roboto Slab', serif;
+            color: var(--navy);
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+        }
+
+        .info-text p {
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .contact-form-panel {
+            background: #fff;
+            border-radius: 20px;
+            padding: 60px 50px;
+            box-shadow: 0 25px 60px rgba(10, 25, 47, 0.1);
+            position: relative;
+            border-top: 5px solid var(--gold);
+        }
+
+        .form-header {
+            margin-bottom: 40px;
+        }
+
+        .form-header h2 {
+            font-family: 'Roboto Slab', serif;
+            color: var(--navy);
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+        }
+
+        .form-header p {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--navy);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: var(--navy);
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            background: #fff;
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        select.form-control {
+            cursor: pointer;
+            appearance: none;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-top-color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--navy);
+            color: var(--gold);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: var(--navy-light);
+            box-shadow: 0 10px 20px rgba(10, 25, 47, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media screen and (max-width: 1000px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .contact-info-panel,
+            .contact-form-panel {
+                padding: 30px 20px;
+                border-radius: 15px;
+            }
+
+            .form-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-wrapper {
+                padding: 0 15px;
+                margin-top: 0;
+            }
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader" role="status" aria-label="Loading DL Group &amp; Finance">
+        <div
+            style="margin-bottom: 20px; width: 100px; height: 100px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+            <img src="dl_logo_circle.png" alt="DL Logo" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="loader-mark">DL Group <span>&amp; Finance</span></div>
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-badge"><img src="dl_logo_circle.png" alt="DL Logo"></div> DL Group <span>&amp;
+                Finance</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html" style="color:var(--primary); font-weight:600;">Contact Us</a></li>
+            <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger"
+            aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a
+            href="careers.html">Careers</a><a href="contact.html">Contact Us</a>
+    </div>
+
+    <header class="contact-header">
+        <h1 class="page-title reveal">Connect With DL Group</h1>
+        <p class="page-subtitle reveal" style="transition-delay: 0.1s;">Elite 24/7 support dedicated to facilitating
+            your financial, travel, talent, and real estate aspirations seamlessly.</p>
+    </header>
+
+    <div class="contact-wrapper">
+        <div class="contact-info-panel reveal" style="transition-delay: 0.2s;">
+
+            <div class="info-block">
+                <div class="info-icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg></div>
+                <div class="info-text">
+                    <h3>Direct Connect</h3>
+                    <p style="color: var(--navy); font-weight: 500;">+91 999 000 0000</p>
+                    <p>Mon - Sat, 9am - 7pm</p>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <div class="info-icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg></div>
+                <div class="info-text">
+                    <h3>Email Desk</h3>
+                    <p style="color: var(--navy); font-weight: 500;">support@dlgroupfinance.com</p>
+                    <p>Response within 24 hours</p>
+                </div>
+            </div>
+
+            <div class="info-block">
+                <div class="info-icon"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg></div>
+                <div class="info-text">
+                    <h3>Global HQ</h3>
+                    <p style="color: var(--navy); font-weight: 500;">Hyderabad, Telangana</p>
+                    <p>India (Branches in UAE & UK)</p>
+                </div>
+            </div>
+
+            <div style="flex-grow: 1; display:flex; align-items:flex-end; padding-top: 30px;">
+                <p style="margin:0; font-style:italic; color: var(--text-muted); font-size: 0.95rem;">"Trust is the
+                    cornerstone of every financial relationship. At DL Group, we are here to honor yours."</p>
+            </div>
+        </div>
+
+        <div class="contact-form-panel reveal" style="transition-delay: 0.3s;">
+            <div class="form-header">
+                <h2>Initiate an Inquiry</h2>
+                <p>Provide your details and a dedicated executive will reach out to you directly.</p>
+            </div>
+
+            <form action="">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" placeholder="Work or personal email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Division of Interest</label>
+                    <div class="select-wrapper">
+                        <select class="form-control" required>
+                            <option value="">Select a DL Division</option>
+                            <option value="finance">DL Group Finance & Lending</option>
+                            <option value="travel">DL Travels & Tours</option>
+                            <option value="consulting">DL Consultant (Talent & Staffing)</option>
+                            <option value="dubai">Dubai Luxury Rental Properties</option>
+                            <option value="general">General Corporate Inquiry</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Message Requirements</label>
+                    <textarea class="form-control" rows="5" placeholder="Please elaborate on how we can assist you..."
+                        required></textarea>
+                </div>
+
+                <button type="button" onclick="alert('Inquiry sent! Thank you.')" class="submit-btn">Transmit
+                    Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="main-footer">
+        <div class="footer-grid">
+            <!-- Column 1: Company -->
+            <div class="footer-col">
+                <a href="index.html" class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <img src="dl_logo_circle.png" alt="Logo"
+                            style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+                    </div>
+                    DL Group <span>&amp; Finance</span>
+                </a>
+                <p class="footer-desc">Redefining financial freedom since 2014. We provide transparent, fast, and
+                    accessible loan solutions to help you achieve your dreams.</p>
+                <div class="footer-contact">
+                    <div class="c-item">
+                        <svg class="c-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <p class="c-text">Financial District, Hyderabad, TS 500032</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4 class="footer-h4">Quick Links</h4>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="careers.html">Join Our Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Services -->
+            <div class="footer-col">
+                <h4 class="footer-h4">Our Services</h4>
+                <ul class="footer-nav">
+                    <li><a href="services.html">Personal Loans</a></li>
+                    <li><a href="services.html">Daily Finance</a></li>
+                    <li><a href="services.html">Mortgage Loans</a></li>
+                    <li><a href="services.html">Business Growth</a></li>
+                    <li><a href="services.html">Gold Loans</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Stay Connected -->
+            <div class="footer-col">
+                <h4 class="footer-h4">Connect With Us</h4>
+                <p class="footer-desc">Join 50,000+ others who stay ahead in their financial journey.</p>
+                <div class="footer-social">
+                    <a href="https://wa.me/919990000000" target="_blank" aria-label="WhatsApp"
+                        style="color: #25D366;"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg></a>
+                    <a href="https://instagram.com/dlfinance" target="_blank" aria-label="Instagram"
+                        style="color: #E1306C;"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.203 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.88z" />
+                        </svg></a>
+                    <a href="https://linkedin.com/company/dl-group-finance" target="_blank" aria-label="LinkedIn"
+                        style="color: #0077b5;"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                        </svg></a>
+                    <a href="https://twitter.com/dlfinance" target="_blank" aria-label="Twitter"
+                        style="color: #1DA1F2;"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="footer-copy">© 2026 DL Group &amp; Finance Pvt. Ltd. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('hidden'), 800); });
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('open', open);
+        });
+
+        const revealObs = new IntersectionObserver((entries, obs) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+        });
+    </script>
+</body>
+
+</html>
