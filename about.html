@@ -291,39 +291,197 @@
             background: rgba(255, 255, 255, 0.98) !important;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
+
+        /* Message from Founder Section */
+        .founder-message-section {
+            padding: 120px 6%;
+            background: var(--surface-2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-message-section::before {
+            content: '"';
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            font-size: 20rem;
+            color: rgba(212, 175, 55, 0.05);
+            font-family: 'serif';
+            line-height: 1;
+        }
+
+        .founder-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .founder-visual {
+            position: relative;
+        }
+
+        .founder-img-frame {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(10, 25, 47, 0.2);
+            aspect-ratio: 0.8;
+        }
+
+        .founder-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .founder-img-frame:hover img {
+            transform: scale(1.05);
+        }
+
+        .founder-badge {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 20px 35px;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 4px solid var(--gold);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .founder-badge .name {
+            display: block;
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .founder-badge .title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+        }
+
+        .founder-text-content {
+            position: relative;
+        }
+
+        .founder-eyebrow {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .founder-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 35px;
+        }
+
+        .message-body {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--slate);
+        }
+
+        .message-body p {
+            margin-bottom: 25px;
+        }
+
+        .founder-signature {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 30px;
+        }
+
+        .founder-signature .sig-name {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .founder-signature .sig-role {
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 992px) {
+            .founder-inner {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .founder-visual {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div id="loader" role="status" aria-label="Loading DL Group &amp; Finance">
-        <div
-            style="margin-bottom: 20px; width: 100px; height: 100px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
-            <img src="dl_logo_circle.png" alt="DL Logo" style="width: 100%; height: 100%; object-fit: cover;">
+    <div id="loader" role="status" aria-label="Loading DL Group & Finance">
+        <div class="loader-brand-container">
+            <!-- Circular path animation -->
+            <svg class="loader-circle-svg" width="160" height="160" viewBox="0 0 160 160">
+                <circle class="loader-circle-path" cx="80" cy="80" r="76" />
+            </svg>
+
+            <!-- Big D & L Letters -->
+            <div class="loader-dl-text">
+                <span class="dl-d">D</span><span class="dl-l">L</span>
+            </div>
         </div>
-        <div class="loader-mark">DL Group <span>&amp; Finance</span></div>
-        <div class="loader-track">
-            <div class="loader-fill"></div>
+
+        <div class="loader-logo-text">
+            <div class="logo-group">
+                <span class="line"></span> GROUP <span class="line"></span>
+            </div>
+            <div class="logo-finance">FINANCE</div>
+            <div class="logo-tagline">YOUR TRUSTED FINANCIAL PARTNER</div>
         </div>
     </div>
 
     <nav id="navbar">
         <a href="index.html" class="nav-logo">
-            <div class="nav-logo-badge">
-                <img src="dl_logo_circle.png" alt="DL Logo">
-            </div>
+            <div class="nav-logo-badge"><img src="dl_logo_circle.png" alt="DL Logo"></div>
             DL Group <span>&amp; Finance</span>
         </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html" style="color:var(--primary); font-weight:700;">About Us</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="careers.html">Careers</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="contact.html" class="nav-cta">Get Started</a></li>
         </ul>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-        </button>
+        <button class="hamburger" id="hamburger"
+            aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </nav>
     <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
@@ -332,6 +490,7 @@
         <a href="careers.html">Careers</a>
         <a href="contact.html">Contact Us</a>
     </div>
+
 
     <header class="hero-banner">
         <div class="banner-content">
@@ -401,6 +560,39 @@
                     <p>We transcend borders with the launch of our exclusive real estate arm in Dubai. Managing
                         ultra-luxury properties and lifestyle solutions, this venture marks DL Group's official
                         transition into a global lifestyle and finance conglomerate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="founder-message-section">
+        <div class="founder-inner">
+            <div class="founder-visual reveal">
+                <div class="founder-img-frame">
+                    <img src="founder.png" alt="Thammireddy Dileep">
+                </div>
+                <div class="founder-badge">
+                    <span class="name">Thammireddy Dileep</span>
+                    <span class="title">Founder of DL Group</span>
+                </div>
+            </div>
+            <div class="founder-text-content reveal">
+                <span class="founder-eyebrow">Message from the Founder</span>
+                <h2 class="founder-title">Building Progress on a Foundation of Trust</h2>
+                <div class="message-body">
+                    <p>At DL Group, our journey began in 2014 with a simple vision — to build a company based on trust,
+                        commitment, and long-term relationships. What started as a small financial service initiative
+                        has grown into a diversified organization serving customers across multiple industries.</p>
+                    <p>Every step of our growth has been driven by dedication, customer satisfaction, and the belief
+                        that success comes from creating value for the people we serve. As we expanded into travel
+                        services, manpower consultancies, and rental properties, our focus has always remained the same
+                        — delivering reliable services and building strong partnerships.</p>
+                    <p>We will continue to expand, innovate, and create opportunities while maintaining the core values
+                        that built DL Group.</p>
+                </div>
+                <div class="founder-signature">
+                    <span class="sig-name">— Thammireddy Dileep</span>
+                    <span class="sig-role">Founder, DL Group</span>
                 </div>
             </div>
         </div>
@@ -495,13 +687,18 @@
     </footer>
 
     <script>
-        window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('hidden'), 800); });
+        window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('hidden'), 4500); });
 
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         hamburger.addEventListener('click', () => {
             const open = mobileMenu.classList.toggle('open');
             hamburger.classList.toggle('open', open);
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 10);
         });
 
         const revealObs = new IntersectionObserver((entries, obs) => {
@@ -514,10 +711,6 @@
         }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
 
         document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-        window.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
-        });
     </script>
 </body>
 

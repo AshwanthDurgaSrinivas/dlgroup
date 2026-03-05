@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (loaderRes.ok) {
             const loaderHtml = await loaderRes.text();
             document.body.insertAdjacentHTML("afterbegin", loaderHtml);
-            
+
             // Remove Loader after delay
             setTimeout(() => {
                 const loader = document.getElementById("loader");
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const navRes = await fetch("navbar.html");
         if (navRes.ok) {
             const navHtml = await navRes.text();
-            
+
             // Insert after Loader (or beginning if loader failed)
             const loaderEl = document.getElementById("loader");
             if (loaderEl) {

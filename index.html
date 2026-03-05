@@ -14,14 +14,25 @@
 
 <body>
 
-    <div id="loader" role="status" aria-label="Loading DL Group &amp; Finance">
-        <div
-            style="margin-bottom: 20px; width: 100px; height: 100px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
-            <img src="dl_logo_circle.png" alt="DL Logo" style="width: 100%; height: 100%; object-fit: cover;">
+    <div id="loader" role="status" aria-label="Loading DL Group & Finance">
+        <div class="loader-brand-container">
+            <!-- Circular path animation -->
+            <svg class="loader-circle-svg" width="160" height="160" viewBox="0 0 160 160">
+                <circle class="loader-circle-path" cx="80" cy="80" r="76" />
+            </svg>
+
+            <!-- Big D & L Letters -->
+            <div class="loader-dl-text">
+                <span class="dl-d">D</span><span class="dl-l">L</span>
+            </div>
         </div>
-        <div class="loader-mark">DL Group <span>&amp; Finance</span></div>
-        <div class="loader-track">
-            <div class="loader-fill"></div>
+
+        <div class="loader-logo-text">
+            <div class="logo-group">
+                <span class="line"></span> GROUP <span class="line"></span>
+            </div>
+            <div class="logo-finance">FINANCE</div>
+            <div class="logo-tagline">YOUR TRUSTED FINANCIAL PARTNER</div>
         </div>
     </div>
     <nav id="navbar">
@@ -53,74 +64,82 @@
     </div>
 
     <!-- HERO -->
-    <section id="home">
-        <div class="hero-orb orb-1"></div>
-        <div class="hero-orb orb-2"></div>
-        <div class="hero-inner">
-
+    <section id="home"
+        style="min-height: 80vh; padding: 40px 6% 80px; display: flex; align-items: flex-start; background: linear-gradient(rgba(6, 13, 30, 0.85), rgba(6, 13, 30, 0.95)), url('hero-bg-premium.png') no-repeat center center/cover;">
+        <div class="hero-inner"
+            style="max-width: 1400px; grid-template-columns: 1.2fr 0.8fr; gap: 60px; margin-top: 0;">
             <div class="hero-content">
                 <div class="hero-pill">
-                    <div class="hero-pill-dot">
-                        <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"
-                            viewBox="0 0 24 24">
+                    <div class="hero-pill-dot"><svg width="10" height="10" fill="none" stroke="currentColor"
+                            stroke-width="2.5" viewBox="0 0 24 24">
                             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                        </svg>
+                        </svg></div>
+                    Empowering Growth Since 2014
+                </div>
+                <h1 class="hero-title" style="font-size: clamp(2.5rem, 4vw, 3.8rem); margin-bottom: 30px;">DL Group &
+                    Finance —
+                    <br><em>Legacy of Excellence</em>
+                </h1>
+
+                <div class="hero-story"
+                    style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--primary); padding: 30px; border-radius: 0 20px 20px 0; backdrop-filter: blur(10px); margin-bottom: 40px;">
+                    <p
+                        style="color: #fff; font-size: 1.15rem; line-height: 1.7; font-weight: 500; margin-bottom: 25px;">
+                        Founded in 2014 by <strong>Thammireddy Dileep reddy</strong>, DL Group & Finance began with a
+                        clear vision to provide reliable financial services and build long-term relationships based on
+                        trust and transparency.</p>
+
+                    <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.8; margin-bottom: 20px;">What started as a
+                        small initiative quickly grew through dedication, customer satisfaction, and consistent service
+                        excellence. Over the years, we expanded into <strong>Hyderabad, Tirupati, Visakhapatnam,
+                            Bangalore, Mumbai, and Bhopal</strong>, enabling us to support individuals and businesses
+                        across regions.</p>
+
+                    <div
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">
+                        <div>
+                            <strong>2015:</strong> DL Tours & Travels launched for affordable travel solutions.
+                        </div>
+                        <div>
+                            <strong>2016:</strong> DL Consultancies established for premium manpower services.
+                        </div>
                     </div>
-                    Your Trusted Financial Partner
                 </div>
-                <h1 class="hero-title">Empowering Growth.<br><em>Since 2014</em></h1>
-                <p class="hero-sub">From finance to manpower, travel to luxury rentals—we bring seamless expertise and
-                    uncompromising quality to help your business and life thrive.</p>
+
+                <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.8; margin-bottom: 40px; max-width: 650px;">
+                    In 2026, we entered the real estate sector with <strong>DL Rental Properties</strong>. Today, DL
+                    Group stands as a diversified organization committed to integrity, innovation, and excellence.
+                    <br><br>
+                    <strong style="color: var(--accent);">DL Group — Empowering Growth Since 2014.</strong>
+                </p>
+
                 <div class="hero-actions">
-                    <a href="services.html" class="btn-primary">
-                        Apply for a Loan
-                        <svg class="arr" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"
-                            viewBox="0 0 24 24">
+                    <a href="services.html" class="btn-primary">Apply for a Loan <svg class="arr" width="15" height="15"
+                            fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                    <a href="services.html" class="btn-ghost">
-                        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M10 15l5-3-5-3v6z" />
-                        </svg>
-                        Explore Features
-                    </a>
-                </div>
-                <div class="hero-trust">
-                    <div class="trust-item"><span class="trust-val">₹50Cr+</span><span class="trust-lbl">Loans
-                            Disbursed</span></div>
-                    <div class="trust-div"></div>
-                    <div class="trust-item"><span class="trust-val">95k+</span><span class="trust-lbl">Happy
-                            Customers</span></div>
-                    <div class="trust-div"></div>
-                    <div class="trust-item"><span class="trust-val">4 min</span><span class="trust-lbl">Avg
-                            Approval</span></div>
+                        </svg></a>
+                    <a href="about.html" class="btn-ghost"
+                        style="color: #fff; border-color: rgba(255,255,255,0.2);">Learn Our Story</a>
                 </div>
             </div>
 
-            <div class="hero-visual">
+            <div class="hero-visual" style="position: relative;">
                 <div class="logo-showcase">
-                    <!-- Animated rings -->
                     <div class="logo-ring logo-ring-1"></div>
                     <div class="logo-ring logo-ring-2"></div>
                     <div class="logo-ring logo-ring-3"></div>
 
-                    <!-- Orbital dots -->
-                    <div class="orbit-dot orbit-dot-1"></div>
-                    <div class="orbit-dot orbit-dot-2"></div>
-                    <div class="orbit-dot orbit-dot-3"></div>
-
-                    <!-- Round logo -->
-                    <div class="logo-img-wrapper">
-                        <img src="dl_logo_circle.png" alt="DL Group & Finance Logo">
+                    <div class="logo-img-wrapper"
+                        style="box-shadow: 0 0 0 10px rgba(29, 78, 216, 0.1), 0 30px 60px rgba(0,0,0,0.5);">
+                        <img src="founder.png" alt="Thammireddy Dileep Reddy">
                     </div>
 
-                    <!-- Removed Floating widgets as requested -->
+                    <div class="founder-info-hero">
+                        <div class="founder-name">Thammireddy Dileep Reddy</div>
+                        <div class="founder-tag">Founder of DL Group & Finance</div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -396,8 +415,9 @@
 
     <script>
         // Loader
-        window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('hidden'), 800); });
+        window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('hidden'), 4500); });
 
+        // Navigation
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         hamburger.addEventListener('click', () => {
@@ -410,53 +430,48 @@
             if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 10);
         });
 
-        // Scroll reveal
+        // Scroll Reveal
         const revealObs = new IntersectionObserver(entries => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-        // Stat border line + counter animation
-        function animateCounter(el, target, prefix, suffix, duration) {
-            let start = null;
-            const isFloat = target % 1 !== 0;
-            const step = (ts) => {
-                if (!start) start = ts;
-                const progress = Math.min((ts - start) / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                const current = isFloat ? (eased * target).toFixed(1) : Math.floor(eased * target);
-                el.textContent = prefix + current + suffix;
-                if (progress < 1) requestAnimationFrame(step);
-                else el.textContent = prefix + target + suffix;
-            };
-            requestAnimationFrame(step);
-        }
-
+        // Stats Counter
         const statData = [
-            { prefix: '₹', target: 50, suffix: 'Cr+' },
-            { prefix: '', target: 95, suffix: 'k+' },
-            { prefix: '', target: 4.8, suffix: '★' },
-            { prefix: '', target: 99, suffix: '%' }
+            { target: 50, prefix: '₹', suffix: 'Cr+' },
+            { target: 95, prefix: '', suffix: 'k+' },
+            { target: 4.8, prefix: '', suffix: '★' },
+            { target: 99, prefix: '', suffix: '%' }
         ];
 
-        const statObs = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    const bstats = document.querySelectorAll('.bstat');
-                    bstats.forEach((bs, i) => {
-                        bs.classList.add('visible-stat');
-                        const numEl = bs.querySelector('.bstat-num');
-                        if (numEl && statData[i]) {
-                            const d = statData[i];
-                            setTimeout(() => animateCounter(numEl, d.target, d.prefix, d.suffix, 1200), i * 120);
-                        }
-                    });
-                    statObs.disconnect();
+        function animateStats() {
+            const bstats = document.querySelectorAll('.bstat');
+            bstats.forEach((bs, i) => {
+                const numEl = bs.querySelector('.bstat-num');
+                const data = statData[i];
+                let start = 0;
+                const duration = 2000;
+                const startTime = performance.now();
+
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const currentVal = (progress * data.target).toFixed(data.target % 1 === 0 ? 0 : 1);
+                    numEl.innerHTML = `${data.prefix}${currentVal}<span>${data.suffix}</span>`;
+                    if (progress < 1) requestAnimationFrame(update);
                 }
+                requestAnimationFrame(update);
             });
-        }, { threshold: 0.3 });
-        const firstStat = document.querySelector('.bstat');
-        if (firstStat) statObs.observe(firstStat);
+        }
+
+        const statObs = new IntersectionObserver(entries => {
+            if (entries.length > 0 && entries[0].isIntersecting) {
+                animateStats();
+                statObs.disconnect();
+            }
+        }, { threshold: 0.5 });
+        const statsSec = document.querySelector('#about');
+        if (statsSec) statObs.observe(statsSec);
 
         // Tab ripple effect
         document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -486,11 +501,14 @@
         // Smooth anchors
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
-                const t = document.querySelector(a.getAttribute('href'));
-                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
+
     <footer id="main-footer">
         <div class="footer-grid">
             <!-- Column 1: Company -->
